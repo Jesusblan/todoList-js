@@ -1,3 +1,39 @@
 body{
-    background-color: aqua;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    width: 1400px;
+    height: 800px;
+    margin: 0px;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(8, 1fr);
 }
+.header{
+    grid-column: 3/15;
+    grid-row: 1/2;
+    background-image: linear-gradient(to right, rgb(0, 134, 187), white);
+    padding-top: 16px;
+    padding-left: 10px;
+}
+    .header h2{
+        font-style: italic;
+        font-weight: 400;
+    }
+
+.sections{
+    grid-row: 1/9;
+    grid-column: 1/3;
+    background-color: rgb(0, 134, 187);
+    display: grid;
+    grid-template-rows: 1.8fr 1fr 1fr 1fr 1.7fr;
+}
+    .sections svg{
+        fill: white;
+    }
+    .sections button{
+        margin: 30px;
+        border-radius: 30px;
+        font-size: 1.5rem;
+        border-width: 0px;
+    }
