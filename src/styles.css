@@ -42,10 +42,23 @@ body{
         border-width: 0px;
     }
 
-
-
+#container{
+    grid-column: 3/15;
+    grid-row: 2/9;
+    width: 1200px;
+    height: 700px;
+    background-color: rgb(225, 225, 225);
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
 
 /* todo´s cards styling*/
 .card{
-    background-color: brown;
+    border-radius: 25px;
+    margin: 15px;
+    padding-left: 10px;
+    color: white;
+    background-color: rgb(3, 161, 224);
 }

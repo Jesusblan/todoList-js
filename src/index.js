@@ -3,6 +3,8 @@ import { todoList } from "./home.js";
 
 const container = document.querySelector("#container");
 
+//"To do" section
+
 function renderTodos(){
     container.innerHTML = "";
 
@@ -14,5 +16,7 @@ function renderTodos(){
     })
 }
 
-console.log(todoList);
-renderTodos();
+document.querySelector("#todo").addEventListener("click", () =>{
+    renderTodos();
+})
+
