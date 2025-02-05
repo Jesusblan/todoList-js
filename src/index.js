@@ -1,5 +1,5 @@
 import "./styles.css";
-import { todoList } from "./home.js";
+import { todoList, projectList } from "./home.js";
 
 const container = document.querySelector("#container");
 
@@ -23,15 +23,39 @@ document.querySelector("#todo").addEventListener("click", () =>{
 
 //projects section
 
+function renderProjects(){
+    container.innerHTML = "";
+    container.setAttribute("id", "projectContainer");
+
+    projectList.forEach(project => {
+        let projectCard = document.createElement("div");
+        projectCard.classList.add("projectCard");
+        projectCard.innerHTML = `<h4>${project.title}</h4> <p>Limit date: ${project.limit}</p>`;
+        container.appendChild(projectCard);
+    })
+}
+
 document.querySelector("#projects").addEventListener("click", () =>{
     container.setAttribute("id", "projectContainer");
-    container.innerHTML = "projects";
+    renderProjects();
 })
 
 
 
 //Home section
+
 document.querySelector("#home").addEventListener("click", () => {
     container.setAttribute("id", "homeContainer");
-    container.innerHTML = "home";
+    container.innerHTML = "";
+
+    let homeProjects = document.createElement("div");
+    homeProjects.classList.add("homeProjects");
+    container.appendChild(homeProjects);
+
+    let homeTodos = document.createElement("div");
+    homeTodos.classList.add("homeTodos");
+    container.appendChild(homeTodos);
+
+
+    
 })

@@ -24,9 +24,9 @@ addTodo("titulazo", "ta guapo", "pendiente", "urgente", false);
 
 //projects
 class project {
-    constructor(title, limit){
+    constructor(title, priority){
         this.title = title;
-        this.limit = limit;
+        this.priority = priority;
         this.todo = [];
     }
 }
@@ -36,7 +36,9 @@ function addProject(title, limit){
     projectList.push(newProject)
 }
 
+addProject("app", "important")
+addProject("web", "medium")
 
 //
 
-export {todoList}
+export {todoList, projectList}
