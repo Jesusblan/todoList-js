@@ -1,7 +1,5 @@
 let todoList = []
-let projectList = [
-    asignedTodo=[]
-]
+let projectList = []
 
 //todo class
 class todo {
@@ -20,3 +18,7 @@ function addTodo(title, description, limitDate, priority, checked){
     todoList.push(newTodo);
     
 }
+addTodo("titulazo", "ta guapo", "pendiente", "urgente", false);
+addTodo("titulazo", "ta guapo", "pendiente", "urgente", false);
+addTodo("titulazo", "ta guapo", "pendiente", "urgente", false);
+export {todoList}
