@@ -7,6 +7,7 @@ const container = document.querySelector("#container");
 
 function renderTodos(){
     container.innerHTML = "";
+    container.setAttribute("id", "container");
 
     todoList.forEach(todo => {
         let todoCard = document.createElement("div");
@@ -20,3 +21,17 @@ document.querySelector("#todo").addEventListener("click", () =>{
     renderTodos();
 })
 
+//projects section
+
+document.querySelector("#projects").addEventListener("click", () =>{
+    container.setAttribute("id", "projectContainer");
+    container.innerHTML = "projects";
+})
+
+
+
+//Home section
+document.querySelector("#home").addEventListener("click", () => {
+    container.setAttribute("id", "homeContainer");
+    container.innerHTML = "home";
+})

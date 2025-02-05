@@ -42,6 +42,7 @@ body{
         border-width: 0px;
     }
 
+/* todo´s styling*/
 #container{
     grid-column: 3/15;
     grid-row: 2/9;
@@ -53,12 +54,22 @@ body{
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
-
-/* todo´s cards styling*/
 .card{
     border-radius: 25px;
     margin: 15px;
     padding-left: 10px;
     color: white;
     background-color: rgb(3, 161, 224);
+}
+
+/*projects styling*/
+#projectContainer{
+    background-color: red;
+}
+
+
+
+/*home styling*/
+#homeContainer{
+    background-color: aqua;
 }
