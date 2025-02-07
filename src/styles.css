@@ -127,6 +127,9 @@ body{
     width: 1200px;
     height: 700px;
     background-image: linear-gradient(to bottom right, rgb(225, 225, 225), white);    
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
     .todoForm{
 

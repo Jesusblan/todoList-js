@@ -31,8 +31,8 @@ class project {
     }
 }
 
-function addProject(title, limit){
-    let newProject = new project(title, limit);
+function addProject(title, priority){
+    let newProject = new project(title, priority);
     projectList.push(newProject)
 }
 

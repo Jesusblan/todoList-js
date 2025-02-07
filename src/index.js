@@ -72,32 +72,40 @@ document.querySelector("#forms").addEventListener("click", ()=> {
     <form id="addedTodo" action="index.js" method="post">
         <label for="title">Title: </label>
         <input type="text" id="title" placeholder="To do title...">
-
+        <br>
         <label for="description">Description:  </label>
         <input type="text" id="description" placeholder="To do description...">
-
+        <br>
         <label for="limitDate">Limit date: </label>
         <input type="date" id="limitDate">
-
+        <br>
         <label for="priority">Priority:  </label>
         <input type="text" id="priority" placeholder="Urgent...">
-
+        <br>
         <label for="status">Done?</label>
         <input type="checkbox" id="status" value="off">
-
+        <br>
         <button id="submit">Submit</button>
     </form>
     `
-
-
     container.appendChild(todoForm);
 
 
     let projectForm = document.createElement("div");
     projectForm.classList.add("div");
 
+    projectForm.innerHTML = `
+    <form id="addedProject" action="index.js" method="post">
 
-
+        <label for="title">Title: </label>
+        <input type="text" id="title" placeholder="Project title...">
+        <br>
+        <label for="priority">Priority:  </label>
+        <input type="text" id="priority" placeholder="Priority..">
+        <br>
+        <button id="submit">Submit</button>
+    </form>
+    `
     container.appendChild(projectForm);
 
 })
