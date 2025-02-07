@@ -3,6 +3,7 @@ import { todoList, projectList } from "./home.js";
 
 const container = document.querySelector("#container");
 
+
 //"To do" section
 
 function renderTodos(){
@@ -20,6 +21,7 @@ function renderTodos(){
 document.querySelector("#todo").addEventListener("click", () =>{
     renderTodos();
 })
+
 
 //projects section
 
@@ -41,7 +43,6 @@ document.querySelector("#projects").addEventListener("click", () =>{
 })
 
 
-
 //Home section
 
 document.querySelector("#home").addEventListener("click", () => {
@@ -55,7 +56,48 @@ document.querySelector("#home").addEventListener("click", () => {
     let homeTodos = document.createElement("div");
     homeTodos.classList.add("homeTodos");
     container.appendChild(homeTodos);
+  
+})
 
 
-    
+//Add task section
+document.querySelector("#forms").addEventListener("click", ()=> {
+    container.setAttribute("id", "homeForm");
+    container.innerHTML = "";
+
+    let todoForm = document.createElement("div");
+    todoForm.classList.add("todoForm");
+
+    todoForm.innerHTML = `
+    <form id="addedTodo" action="index.js" method="post">
+        <label for="title">Title: </label>
+        <input type="text" id="title" placeholder="To do title...">
+
+        <label for="description">Description:  </label>
+        <input type="text" id="description" placeholder="To do description...">
+
+        <label for="limitDate">Limit date: </label>
+        <input type="date" id="limitDate">
+
+        <label for="priority">Priority:  </label>
+        <input type="text" id="priority" placeholder="Urgent...">
+
+        <label for="status">Done?</label>
+        <input type="checkbox" id="status" value="off">
+
+        <button id="submit">Submit</button>
+    </form>
+    `
+
+
+    container.appendChild(todoForm);
+
+
+    let projectForm = document.createElement("div");
+    projectForm.classList.add("div");
+
+
+
+    container.appendChild(projectForm);
+
 })
