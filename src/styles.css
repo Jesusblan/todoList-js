@@ -149,6 +149,7 @@ body{
         border-radius: 25px;
     }
         form{
+            color: white;
             display: grid;
             grid-template-columns: 1fr 2fr;
             grid-template-rows: repeat(6, 1fr);
