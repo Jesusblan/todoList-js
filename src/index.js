@@ -1,6 +1,6 @@
 import "./styles.css";
 import { todoList, projectList } from "./home.js";
-
+export {container}
 const container = document.querySelector("#container");
 
 
@@ -50,62 +50,53 @@ document.querySelector("#home").addEventListener("click", () => {
     container.innerHTML = "";
 
     let homeProjects = document.createElement("div");
-    homeProjects.classList.add("homeProjects");
+    homeProjects.classList.add("homeProject");
     container.appendChild(homeProjects);
+
+    function renderHome(){
+        projectList.forEach(project => {
+            let projectCard = document.createElement("div");
+            projectCard.classList.add("projectCard");
+            projectCard.innerHTML = `<h4>${project.title}</h4> <p>Limit date: ${project.limit}</p>`;
+            homeProjects.appendChild(projectCard);
+        })
+
+        todoList.forEach(todo => {
+            let todoCard = document.createElement("div");
+            todoCard.classList.add("card");
+            todoCard.innerHTML = `<h4>${todo.title}</h4> <p>${todo.description}</p> <p>${todo.limitDate}</p> <p>${todo.priority}</p> <p>${todo.checked}</p>`;
+            homeTodos.appendChild(todoCard);
+        })
+    
+    }
+
 
     let homeTodos = document.createElement("div");
     homeTodos.classList.add("homeTodos");
     container.appendChild(homeTodos);
-  
+    renderHome();
 })
 
 
-//Add task section
-document.querySelector("#forms").addEventListener("click", ()=> {
-    container.setAttribute("id", "addForm");
-    container.innerHTML = "";
-
-    let todoForm = document.createElement("div");
-    todoForm.classList.add("todoForm");
-
-    todoForm.innerHTML = `
-    <form id="addedTodo" action="index.js" method="post">
-        <label for="title">Title: </label>
-        <input type="text" id="title" placeholder="To do title...">
-        
-        <label for="description">Description:  </label>
-        <input type="text" id="description" placeholder="To do description...">
-        
-        <label for="limitDate">Limit date: </label>
-        <input type="date" id="limitDate">
-        
-        <label for="priority">Priority:  </label>
-        <input type="text" id="priority" placeholder="Urgent...">
-        
-        <label for="status">Done?</label>
-        <input type="checkbox" id="status" value="off">
-        
-        <button id="submit">Submit</button>
-    </form>
-    `
-    container.appendChild(todoForm);
 
 
-    let projectForm = document.createElement("div");
-    projectForm.classList.add("projectForm");
 
-    projectForm.innerHTML = `
-    <form id="addedProject" action="index.js" method="post">
+//submit forms
+//document.querySelector("#submitTodo").addEventListener("click", (e)=>{
+//    e.preventDefault();
+//
+//    let title = document.querySelector("#title").value;
+//    let description = document.querySelector("#description").value;
+//    let limitDate = document.querySelector("#limitDate").value;
+//    let priority = document.querySelector("#priority").value;
+//    let checked = document.querySelector("#status").checked;
+//    if (checked === false){checked = "To do"}
+//    else {checked = "Done!"}
 
-        <label for="title">Title: </label>
-        <input type="text" id="title" placeholder="Project title...">
-        
-        <label for="priority">Priority:  </label>
-        <input type="text" id="priority" placeholder="Priority..">
-        
-        <button id="submit">Submit</button>
-    </form>
-    `
-    container.appendChild(projectForm);
+//    addTodo(title, description, limitDate, priority, checked);
 
-})
+//    document.querySelector("#addedTodo").reset();
+
+//})
+
+document.querySelector("#home").click();
