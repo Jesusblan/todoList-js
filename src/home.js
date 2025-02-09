@@ -54,21 +54,25 @@ document.querySelector("#forms").addEventListener("click", ()=> {
     todoForm.classList.add("todoForm");
 
     todoForm.innerHTML = `
-    <form id="addedTodo">
+    <form id="addedTodo" action="home.js" method="post">
         <label for="title">Title: </label>
-        <input type="text" id="title" placeholder="To do title...">
+        <input type="text" name="title" id="title" placeholder="To do title...">
         
-        <label for="description">Description:  </label>
-        <input type="text" id="description" placeholder="To do description...">
+        <label for="description">Description: </label>
+        <input type="text" name="description" id="description" placeholder="To do description...">
         
         <label for="limitDate">Limit date: </label>
-        <input type="date" id="limitDate">
+        <input type="date" name="limitDate" id="limitDate">
         
-        <label for="priority">Priority:  </label>
-        <input type="text" id="priority" placeholder="Urgent...">
-        
+        <label for="priority">Priority:</label>
+        <select name="priority">
+            <option>Urgent</option>
+            <option>Medium</option>
+            <option>For later</option>
+        </select>
+
         <label for="status">Done?</label>
-        <input type="checkbox" id="status" value="off">
+        <input type="checkbox" name="status" id="status" value="off">
         
         <button id="submitTodo">Submit</button>
     </form>
@@ -80,13 +84,17 @@ document.querySelector("#forms").addEventListener("click", ()=> {
     projectForm.classList.add("projectForm");
 
     projectForm.innerHTML = `
-    <form id="addedProject" action="index.js" method="post">
+    <form id="addedProject" action="home.js" method="post">
 
         <label for="title">Title: </label>
-        <input type="text" id="titleProject" placeholder="Project title...">
+        <input type="text" name="title" id="titleProject" placeholder="Project title...">
         
-        <label for="priority">Priority:  </label>
-        <input type="text" id="priorityProject" placeholder="Priority..">
+        <label for="priority">Priority:</label>
+        <select name="Priority">
+            <option>Urgent</option>
+            <option>Medium</option>
+            <option>For later</option>
+        </select>
         
         <button id="submitProject">Submit</button>
     </form>
@@ -94,6 +102,9 @@ document.querySelector("#forms").addEventListener("click", ()=> {
     container.appendChild(projectForm);
 
 })
+
+//get form data
+
 
 
 

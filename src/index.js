@@ -80,23 +80,4 @@ document.querySelector("#home").addEventListener("click", () => {
 
 
 
-
-//submit forms
-//document.querySelector("#submitTodo").addEventListener("click", (e)=>{
-//    e.preventDefault();
-//
-//    let title = document.querySelector("#title").value;
-//    let description = document.querySelector("#description").value;
-//    let limitDate = document.querySelector("#limitDate").value;
-//    let priority = document.querySelector("#priority").value;
-//    let checked = document.querySelector("#status").checked;
-//    if (checked === false){checked = "To do"}
-//    else {checked = "Done!"}
-
-//    addTodo(title, description, limitDate, priority, checked);
-
-//    document.querySelector("#addedTodo").reset();
-
-//})
-
 document.querySelector("#home").click();
