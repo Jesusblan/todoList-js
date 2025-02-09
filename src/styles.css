@@ -49,10 +49,13 @@ body{
     width: 1200px;
     height: 700px;
     background-image: linear-gradient(to bottom right, rgb(225, 225, 225), white);
-    
+    overflow: scroll;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    grid-auto-rows: 200px;
+    grid-auto-flow: row;
 }
 .card{
     border: 0px;
@@ -64,6 +67,7 @@ body{
     padding-left: 10px;
     color: white;
     background-color: rgb(3, 161, 224);
+    
 }
 
 /*projects styling*/
@@ -73,10 +77,13 @@ body{
     width: 1200px;
     height: 700px;
     background-image: linear-gradient(to bottom right, rgb(225, 225, 225), white);
-    
+    overflow: scroll;
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 320px);
+    grid-auto-rows: 320px;
+    grid-auto-flow: row;
 }
 .projectCard{
     background-color: rgb(3, 161, 224);
@@ -108,21 +115,28 @@ body{
 }
 .homeProject{
     width: 1200px;
+    height: 350px;
     grid-column: 1/5;
     background-image: linear-gradient(to right, rgb(225, 225, 225), white); 
-    
+    overflow: scroll;
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 550px);
+    grid-auto-columns: 550px;
+    grid-auto-flow: column;
 }
 .homeTodos{
     width: 1200px;
     grid-column: 1/5;
     grid-row: 2/3;
     background-image: linear-gradient(to right, rgb(225, 225, 225), white);
-    height: 250px;
-
+    height: 350px;
+    overflow: scroll;
+    
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 300px);
+    grid-auto-columns: 300px;
+    grid-auto-flow: column;
 }
 
 /*add task styling*/

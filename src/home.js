@@ -20,30 +20,22 @@ function addTodo(title, description, limitDate, priority, checked) {
     todoList.push(newTodo);
 
 }
-addTodo("titulazo", "ta guapo", "pendiente", "urgente", false);
-addTodo("titulazo", "ta guapo", "pendiente", "urgente", false);
-addTodo("titulazo", "ta guapo", "pendiente", "urgente", false);
+addTodo("Titulo", "description", "limitDate", "priority", true);
 
 //projects
 class project {
-    constructor(title, priority) {
+    constructor(title, date) {
         this.title = title;
-        this.priority = priority;
+        this.date = date;
         this.todo = [];
     }
 }
 
-function addProject(title, priority) {
-    let newProject = new project(title, priority);
+function addProject(title, date) {
+    let newProject = new project(title, date);
     projectList.push(newProject)
 }
-
-addProject("app", "important")
-addProject("web", "medium")
-
-
-
-
+addProject("example title", "example priority");
 
 //Add task forms
 document.querySelector("#forms").addEventListener("click", ()=> {
@@ -54,7 +46,7 @@ document.querySelector("#forms").addEventListener("click", ()=> {
     todoForm.classList.add("todoForm");
 
     todoForm.innerHTML = `
-    <form id="addedTodo" action="home.js" method="post">
+    <form id="addedTodo">
         <label for="title">Title: </label>
         <input type="text" name="title" id="title" placeholder="To do title...">
         
@@ -65,7 +57,7 @@ document.querySelector("#forms").addEventListener("click", ()=> {
         <input type="date" name="limitDate" id="limitDate">
         
         <label for="priority">Priority:</label>
-        <select name="priority">
+        <select name="priority" id="priority">
             <option>Urgent</option>
             <option>Medium</option>
             <option>For later</option>
@@ -84,27 +76,62 @@ document.querySelector("#forms").addEventListener("click", ()=> {
     projectForm.classList.add("projectForm");
 
     projectForm.innerHTML = `
-    <form id="addedProject" action="home.js" method="post">
+    <form id="addedProject">
 
         <label for="title">Title: </label>
         <input type="text" name="title" id="titleProject" placeholder="Project title...">
         
-        <label for="priority">Priority:</label>
-        <select name="Priority">
-            <option>Urgent</option>
-            <option>Medium</option>
-            <option>For later</option>
-        </select>
+        <label for="limitDate">Limit date: </label>
+        <input type="date" name="limitDate" id="dateProject">
         
         <button id="submitProject">Submit</button>
     </form>
     `
     container.appendChild(projectForm);
 
-})
+
+
+
+
 
 //get form data
 
+const projectOutput = document.querySelector("#submitProject");
+
+projectOutput.addEventListener("click", (e) =>{
+    e.preventDefault();
+
+    let title = document.querySelector("#titleProject").value;
+    let date = document.querySelector("#dateProject").value;
+
+    addProject(title, date);
+
+
+})
+
+
+//get todo data
+
+const todoOutput = document.querySelector("#submitTodo");
+
+todoOutput.addEventListener("click", (e) =>{
+    e.preventDefault();
+
+    let title = document.querySelector("#title").value;
+    let description = document.querySelector("#description").value;
+    let limitDate = document.querySelector("#limitDate").value;
+    let priority = document.querySelector("#priority").value;
+    let status = document.querySelector("#status").checked;
+
+    addTodo(title, description, limitDate, priority, status);
+
+})
+
+
+
+
+
+})
 
 
 
